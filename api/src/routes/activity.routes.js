@@ -6,8 +6,7 @@ const router = Router();
 
 router.post("/", async (req, res) => {
   const { name, difficulty, duration, season, countries } = req.body;
-try {
-
+  try {
     const activityCreated = await Activity.create({
       name,
       difficulty,
@@ -22,13 +21,10 @@ try {
       });
       await activityCreated.addCountry(countryActivity);
     });
-    res.status(200).send('Activity creada exitosamente')
-}
-catch (error) {
-    console.log('error', error)
-}
-
-})
-
+    res.status(200).send("Activity creada exitosamente");
+  } catch (error) {
+    console.log("error", error);
+  }
+});
 
 module.exports = router;
