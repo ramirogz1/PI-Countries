@@ -27,4 +27,16 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.get('/',async(req,res)=> {
+  try {
+    const activities = await Activity.findAll({
+      attributes: ['id','name','difficulty','duration','season'],
+      include: Country,
+    })
+    res.status(200).send(activities)
+  } catch (error) {
+    console.log('error en /act',error)
+  }
+})
+
 module.exports = router;
