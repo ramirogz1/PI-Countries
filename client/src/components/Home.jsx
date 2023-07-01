@@ -11,7 +11,7 @@ export default function Home() {
 
   useEffect(() => {
     dispatch(getCountries());
-  }, []);
+  }, [dispatch]);
   return (
     <div className="fondoHome">
         <div>

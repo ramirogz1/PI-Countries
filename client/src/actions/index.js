@@ -19,3 +19,31 @@ export function getActivities() {
         })
     }
 }
+
+export function filterContinents (payload) {
+    return {
+        type: 'FILTER_CONTINENTS',
+        payload,
+    }
+}
+
+export function filterActivities(payload){
+    return {
+        type: 'FILTER_ACTIVITIES',
+        payload
+    }
+}
+
+export function orderByName(payload) {
+return {
+    type: 'ORDER_BY_NAME',
+    payload
+}
+}
+
+export function orderByPopulation(payload) {
+    return {
+        type:'ORDER_BY_POPULATION',
+        payload
+    }
+}
